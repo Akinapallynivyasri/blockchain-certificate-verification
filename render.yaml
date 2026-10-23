@@ -1,0 +1,18 @@
+# Optional: one-click backend deploy on Render (https://render.com).
+services:
+  - type: web
+    name: certificate-verification-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false   # set to your frontend URL after deploying it
+      - key: DATA_DIR
+        value: /var/data   # needs a persistent disk (paid plan); otherwise data resets on redeploy

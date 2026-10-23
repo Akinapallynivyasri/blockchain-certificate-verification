@@ -1,0 +1,9 @@
+body {
+  background-color: #f6f7f9;
+}
+
+.hash-box {
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
